@@ -30,7 +30,7 @@ class ContatoActivity : BaseActivity() {
         progress.visibility = View.VISIBLE
         Thread(Runnable {
             Thread.sleep(1500)
-            var lista = ContatoApplication.instance.helperDB?.buscarContatos("$idContato",true) ?: return@Runnable
+            var lista = ContatoApplication.instance.helperDB?.buscarContatos("$idContato") ?: return@Runnable
             var contato = lista.getOrNull(0) ?: return@Runnable
             runOnUiThread {
                 etNome.setText(contato.nome)
@@ -68,7 +68,7 @@ class ContatoActivity : BaseActivity() {
             progress.visibility = View.VISIBLE
             Thread(Runnable {
                 Thread.sleep(1500)
-                ContatoApplication.instance.helperDB?.deletarCoontato(idContato)
+                ContatoApplication.instance.helperDB?.deletarContato(idContato)
                 runOnUiThread {
                     progress.visibility = View.GONE
                     finish()
