@@ -39,7 +39,7 @@ class MainActivity : BaseActivity() {
 
     override fun onResume() {
         super.onResume()
-        onClickBuscar()
+        onClickBuscar() // pra gerar a lista do DB, como se fosse um buscar vazio
     }
 
     private fun onClickAdd(){
